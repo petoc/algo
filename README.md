@@ -2,16 +2,21 @@
 
 Collection of algorithm implementations for Go.
 
-## Error detection
+### Error detection
 
 [Damm](https://github.com/petoc/algo/tree/master/damm)<br>
 [Damm64](https://github.com/petoc/algo/tree/master/damm64) (using quasigroups for character base from 3 to 64 characters)<br>
 [Luhn](https://github.com/petoc/algo/tree/master/luhn)<br>
 
+### Math
+
+[Greatest common divisor](https://github.com/petoc/algo/tree/master/gcd) (Euclid)<br>
 
 ## Usage
 
-### Damm
+### Error detection
+
+#### Damm
 
 Implementation of error detection algorithm for numeric codes from H. Michael Damm.
 
@@ -24,7 +29,7 @@ damm.Calculate("123456789") // 4
 damm.Validate("1234567894") // true
 ```
 
-### Damm64
+#### Damm64
 
 Based on error detection algorithm from H. Michael Damm. Uses pre-generated quasigroups for character base from 3 to 64 characters.
 
@@ -37,7 +42,8 @@ base := "0123456789ABCDEFGHIJKLMNOPQRSTUV"
 damm64.Calculate(base, "G12Q") // F
 damm64.Validate(base, "G12QF") // true
 ```
-### Luhn
+
+#### Luhn
 
 Implementation of error detection algorithm for numeric codes from Hans Peter Luhn.
 
@@ -50,9 +56,21 @@ luhn.Calculate("123456789") // 7
 luhn.Validate("1234567897") // true
 ```
 
+### Math
+
+#### Greatest common divisor
+
+```go
+import "github.com/petoc/algo/gcd"
+```
+
+```go
+gcd.Euclid(8, 12) // 4
+```
+
 ## Sources
 
-Damm Quasigroups (http://www.md-software.de/math/DAMM_Quasigruppen.txt)
+Damm Quasigroups (http://www.md-software.de/math/DAMM_Quasigruppen.txt)<br>
 
 ## License
 
